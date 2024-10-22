@@ -44,7 +44,8 @@ app.use("/api/payment", paymentRouter);
 mongoose
   .connect(process.env.MONGO_URI, {
     dbName: "Mern-Ecom",
-    serverSelectionTimeoutMS: 5000,
+    serverSelectionTimeoutMS: 5000, // Wait for 5 seconds before timing out
+    socketTimeoutMS: 45000,
   })
   .then(() => console.log("Mongodb started"))
   .catch((err) => console.log(err));
