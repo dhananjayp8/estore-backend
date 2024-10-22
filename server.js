@@ -46,6 +46,7 @@ const db =
 mongoose
   .connect(db, {
     dbName: "Mern-Ecom",
+    serverSelectionTimeoutMS: 5000,
   })
   .then(() => console.log("Mongodb started"))
   .catch((err) => console.log(err));
